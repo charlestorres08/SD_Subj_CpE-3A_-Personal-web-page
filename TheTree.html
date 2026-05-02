@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trees - Joyce Kilmer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #fffaf0; 
+            background-color: #2c241a; 
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Background logic */
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Warm amber tint for a heartwarming feel */
+            background: linear-gradient(rgba(71, 45, 12, 0.4), rgba(0, 0, 0, 0.3)), 
+                        url('tree.jpg') no-repeat center center;
+            background-size: cover;
+            animation: slowZoom 20s infinite alternate ease-in-out;
+        }
+
+        .poem-box {
+            text-align: center;
+            padding: 50px 70px;
+            max-width: 850px;
+            
+            /* High transparency glass (0.02 is very faint) */
+            background: rgba(255, 255, 255, 0.02);
+            
+            /* Subtle blur so it doesn't distract from the tree */
+            backdrop-filter: blur(4px); 
+            
+            border-radius: 60px 10px; 
+            border: 1px solid rgba(255, 250, 240, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            animation: fadeInHeart 4s ease-out;
+        }
+
+        h1 {
+            font-size: clamp(1.6rem, 4.5vw, 2.8rem);
+            line-height: 1.8;
+            font-weight: 400;
+            font-style: italic;
+            /* Text shadow ensures it stays visible over light parts of the tree */
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.6);
+            letter-spacing: 0.5px;
+        }
+
+        .author {
+            margin-top: 35px;
+            font-size: 0.85rem;
+            letter-spacing: 7px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            font-family: sans-serif;
+        }
+
+        @keyframes slowZoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.08); }
+        }
+
+        @keyframes fadeInHeart {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-container"></div>
+
+    <div class="poem-box">
+        <h1>
+            I think that I shall never see,<br>
+            A poem as lovely as a tree.<br>
+            A tree whose hungry mouth is pressed<br>
+            Against the Earth’s sweet flowing breast.
+        </h1>
+        <div class="author">— Joyce Kilmer —</div>
+    </div>
+
+</body>
+</html>
